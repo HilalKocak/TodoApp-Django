@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from autoslug import AutoSlugField
 from django.urls import reverse
@@ -22,6 +23,7 @@ class Category(models.Model):
 class Todo(models.Model):
     # category=models.ForeignKey(Category, on_delete=models.CASCADE)
     #cascade delete all todos with related that category
+    user=models.ForeignKey(User, on_delete=models.CASCADE)
     category=models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=200)
     content = models.TextField(blank=True, null=True)
@@ -40,4 +42,4 @@ class Todo(models.Model):
                 "category_slug": self.category.slug,
                 "id":self.pk,
             }
-        )
+        )  
