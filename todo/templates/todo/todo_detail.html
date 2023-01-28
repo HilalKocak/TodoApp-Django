@@ -1,19 +1,19 @@
 {% extends 'core/base.html' %}
 
 {% block container %}
-
-<div class="col-sm-6 offset-sm-3">
-    <a href="/" class="btn btn-primary">Home Page</a>
-    <h1 class="text-primary">{{ todo.title }} <small class="text-muted">{{ todo.category }}</small></h1>
-    <p>
-        {{ todo.content }}
-    </p>
-
-    <ul>
-        <li>Create time: {{ todo.created_at|date:"M/d/Y H:s" }}</li>
-        <li>Last Update time: {{ todo.updated_at|date:"M/d/Y H:s" }}</li>
-    </ul>
+<div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ todo.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ todo.category }}</h6>
+            <p class="card-text">{{ todo.content }}</p>
+            <ul class="list-unstyled">
+                <li><small>Create time: {{ todo.created_at|date:"M/d/Y H:s" }}</small></li>
+                <li><small>Last Update time: {{ todo.updated_at|date:"M/d/Y H:s" }}</small></li>
+            </ul>
+            <a href="/" class="card-link">Back</a>
+        </div>
+    </div>
 </div>
-
 
 {% endblock container %}

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404
-from .models import Todo
+from .models import Todo, Category
 # Create your views here.
 
 
@@ -26,6 +26,18 @@ def home_view(request):
 #         return render(request, 'todo/todo_detail.html', context)
 #     except Todo.DoesNotExist:
 #         raise Http404
+
+def category_view(request, category_slug):
+    category=get_object_or_404(Category, slug=category_slug)
+    todos = Todo.objects.filter(
+        is_active = True,
+        category=category,
+    )
+    context=dict(
+        todos=todos,
+        category=category,
+    )
+    return render(request, 'todo/todo_list.html', context)
 
 def todo_detail_view(request, id):
     
