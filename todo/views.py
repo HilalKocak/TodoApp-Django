@@ -39,9 +39,9 @@ def category_view(request, category_slug):
     )
     return render(request, 'todo/todo_list.html', context)
 
-def todo_detail_view(request, id):
+def todo_detail_view(request, category_slug, id):
     
-    todo=get_object_or_404(Todo,pk=id)
+    todo=get_object_or_404(Todo, pk=id, category__slug=category_slug,)# instead of . we use __ --> todo.category.slug
     context=dict(
         todo=todo,
     )
