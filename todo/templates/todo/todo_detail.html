@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+{% block container %}
+
+<div class="col-sm-6 offset-sm-3">
+    <a href="/" class="btn btn-primary">Home Page</a>
+    <h1 class="text-primary">{{ todo.title }} <small class="text-muted">{{ todo.category }}</small></h1>
+    <p>
+        {{ todo.content }}
+    </p>
+
+    <ul>
+        <li>Create time: {{ todo.created_at|date:"M/d/Y H:s" }}</li>
+        <li>Last Update time: {{ todo.updated_at|date:"M/d/Y H:s" }}</li>
+    </ul>
+</div>
+
+
+{% endblock container %}
