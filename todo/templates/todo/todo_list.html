@@ -7,6 +7,8 @@
     <h1 class="text-primary">TODO LIST ({{ todos.count }}) </h1>
     {% if category %}
         <h2>Category: {{ category }}</h2>
+    {% elif tag %}
+        <h2>Tag: {{ tag }}</h2>
     {% endif %}
     
     <div class="list-group">

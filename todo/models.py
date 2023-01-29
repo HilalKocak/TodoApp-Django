@@ -26,6 +26,13 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.title
+    def get_absolute_url(self):
+        return reverse(
+            'tag_view',
+            kwargs={
+                "tag_slug": self.slug,
+            }
+        )
 
 class Todo(models.Model):
     # category=models.ForeignKey(Category, on_delete=models.CASCADE)
