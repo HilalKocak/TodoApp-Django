@@ -1,8 +1,16 @@
+# TODO List
+
+## Project Goals
+- Understanding Model Structure of Django
+- Working with Django Object-Relational Mapping(ORM) Query
+- Understanding the Model View Template(MVT) Relationship
+- Understanding Django Shell Usage
+- Using Query in Django Shell
+- Understanding OneToOneField, ForeignKey, and ManyToManyField
+- Using General Data in the Site with Context Processor
+- DEBUG Mode
+
 ## Django ORM Query
-
-
-
-
 
 ```shell 
 python manage.py shell
